@@ -7,7 +7,7 @@ Regardless of whether you chose the version of the terminal or GUI, you need to 
 pip install -r requirements.txt
 ```
 
-To start the application just run the file ** main.py **
+To start the application just run the file **main.py**
 ```
 python main.py
 ```
