@@ -2,12 +2,12 @@
  Download videos and photos from Youtube, Facebook and Instagram!
 
 ## Install
-Independente se você escolheu a versão do terminal ou GUI, você precissa instalar os requerimentos. Você pode instalar desse jeito:
+Regardless of whether you chose the version of the terminal or GUI, you need to install the requirements. You can install it like this:
 ```
 pip install -r requirements.txt
 ```
 
-Para iniciar o aplicativo é só executar o arquivo **main.py**
+To start the application just run the file ** main.py **
 ```
 python main.py
 ```
