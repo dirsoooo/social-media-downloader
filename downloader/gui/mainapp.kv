@@ -1,0 +1,297 @@
+<Manager>:
+    Menu:
+        name: 'menu'
+    Yt:
+        name: 'yt'
+    Fb:
+        name: 'fb'
+    InstaConfirm:
+        name: 'insta_confirm'
+    Insta_Image:
+        name: 'insta_image'
+    Insta_Video:
+        name: 'insta_video'
+
+<Menu>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: root.width * 0.25, root.height * 0.1
+        spacing: '20dp'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        Image:
+            source: './logo/logo-m.png'
+            size_hint_y: 4
+        Button:
+            background_normal: './button/button.png'
+            background_down: './button/button-pressed.png'
+            text: 'Facebook Downloader'
+            font_size: '20sp'
+            font_name: './font/helvetica.ttf'
+            width: '400sp'
+            on_release: app.root.current  = 'fb'
+        Button:
+            background_normal: './button/button.png'
+            background_down: './button/button-pressed.png'
+            text: 'Instagram Downloader'
+            font_size: '20sp'
+            font_name: './font/helvetica.ttf'
+            width: '400sp'
+            on_release: app.root.current = 'insta_confirm'
+        Button:
+            background_normal: './button/button.png'
+            background_down: './button/button-pressed.png'
+            text: 'Youtube Downloader'
+            font_size: '20sp'
+            font_name: './font/helvetica.ttf'
+            width: '400sp'
+            on_release: app.root.current = 'yt'
+
+<Yt>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        ActionBar:
+            background_color: [0,0,0,0.6]
+            ActionView:
+                ActionPrevious:
+                    app_icon: './logo/logo-p.png'
+                    title: 'Youtube Downloader'
+                    font_name: './font/helvetica.ttf'
+                    on_release: app.root.current = 'menu'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '20dp'
+            padding: root.width * 0.25, root.height * 0.1
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '05sp'
+                Image:
+                    source: './logo/youtube.png'
+                    size_hint_y: 4
+                Label:
+                    text: 'Video URL'
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+                    font_size: '20sp'
+                TextInput:
+                    background_normal: './text-input/input.png'
+                    background_active: './text-input/input-pressed.png'
+                    foreground_color: [1,1,1,1]
+                    cursor_color: [1,1,1,1]
+                    id: yt_url
+                    font_size: '20sp'
+                Button:
+                    background_normal: './button/button.png'
+                    background_down: './button/button-pressed.png'
+                    text: 'Download'
+                    font_size: '20sp'
+                    font_name: './font/helvetica.ttf'
+                    width: '400sp'
+                    on_release: root.download()
+                Label:
+                    id: error
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+
+<Fb>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        ActionBar:
+            background_color: [0,0,0,0.6]
+            ActionView:
+                ActionPrevious:
+                    app_icon: './logo/logo-p.png'
+                    title: 'Facebook Downloader'
+                    font_name: './font/helvetica.ttf'
+                    on_release: app.root.current = 'menu'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '20dp'
+            padding: root.width * 0.25, root.height * 0.1
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '05sp'
+                Image:
+                    source: './logo/facebook.png'
+                    size_hint_y: 4
+                Label:
+                    text: 'Video URL'
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+                    font_size: '20sp'
+                TextInput:
+                    background_normal: './text-input/input.png'
+                    background_active: './text-input/input-pressed.png'
+                    foreground_color: [1,1,1,1]
+                    cursor_color: [1,1,1,1]
+                    id: fb_url
+                    font_size: '20sp'
+                Label:
+                    text: 'Type a name'
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+                    font_size: '20sp'
+                TextInput:
+                    background_normal: './text-input/input.png'
+                    background_active: './text-input/input-pressed.png'
+                    foreground_color: [1,1,1,1]
+                    cursor_color: [1,1,1,1]
+                    id: name_video
+                    font_size: '20sp'
+                Button:
+                    background_normal: './button/button.png'
+                    background_down: './button/button-pressed.png'
+                    text: 'Download'
+                    font_size: '20sp'
+                    font_name: './font/helvetica.ttf'
+                    width: '400sp'
+                    on_release: root.download()
+                Label:
+                    id: error
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+
+<InstaConfirm>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: root.width * 0.25, root.height * 0.1
+        spacing: '20dp'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        Image:
+            source: './logo/logo-m.png'
+            size_hint_y: 4
+        Button:
+            background_normal: './button/button.png'
+            background_down: './button/button-pressed.png'
+            text: 'Image'
+            font_size: '20sp'
+            font_name: './font/helvetica.ttf'
+            width: '400sp'
+            on_release: app.root.current  = 'insta_image'
+        Button:
+            background_normal: './button/button.png'
+            background_down: './button/button-pressed.png'
+            text: 'Vídeo'
+            font_size: '20sp'
+            font_name: './font/helvetica.ttf'
+            width: '400sp'
+            on_release: app.root.current = 'insta_video'
+
+<Insta_Image>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        ActionBar:
+            background_color: [0,0,0,0.6]
+            ActionView:
+                ActionPrevious:
+                    app_icon: './logo/logo-p.png'
+                    title: 'Instagram Downloader'
+                    font_name: './font/helvetica.ttf'
+                    on_release: app.root.current = 'menu'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '20dp'
+            padding: root.width * 0.25, root.height * 0.1
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '05sp'
+                Image:
+                    source: './logo/instagram.png'
+                    size_hint_y: 4
+                Label:
+                    text: 'Image URL'
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+                    font_size: '20sp'
+                TextInput:
+                    background_normal: './text-input/input.png'
+                    background_active: './text-input/input-pressed.png'
+                    foreground_color: [1,1,1,1]
+                    cursor_color: [1,1,1,1]
+                    id: img_url
+                    font_size: '20sp'
+                Button:
+                    background_normal: './button/button.png'
+                    background_down: './button/button-pressed.png'
+                    text: 'Download'
+                    font_size: '20sp'
+                    font_name: './font/helvetica.ttf'
+                    width: '400sp'
+                    on_release: root.download()
+                Label:
+                    id: label
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+
+<Insta_Video>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bg.png'
+        ActionBar:
+            background_color: [0,0,0,0.6]
+            ActionView:
+                ActionPrevious:
+                    app_icon: './logo/logo-p.png'
+                    title: 'Instagram Downloader'
+                    font_name: './font/helvetica.ttf'
+                    on_release: app.root.current = 'menu'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '20dp'
+            padding: root.width * 0.25, root.height * 0.1
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '05sp'
+                Image:
+                    source: './logo/instagram.png'
+                    size_hint_y: 4
+                Label:
+                    text: 'Video URL'
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
+                    font_size: '20sp'
+                TextInput:
+                    background_normal: './text-input/input.png'
+                    background_active: './text-input/input-pressed.png'
+                    foreground_color: [1,1,1,1]
+                    cursor_color: [1,1,1,1]
+                    id: video_url
+                    font_size: '20sp'
+                Button:
+                    background_normal: './button/button.png'
+                    background_down: './button/button-pressed.png'
+                    text: 'Download'
+                    font_size: '20sp'
+                    font_name: './font/helvetica.ttf'
+                    width: '400sp'
+                    on_release: root.download_video()
+                Label:
+                    id: label
+                    font_name: './font/helvetica.ttf'
+                    size_hint_x: None
