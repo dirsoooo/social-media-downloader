@@ -1,5 +1,5 @@
 # Social Media Downloader
- Download videos and photos from Youtube, Facebook and Instagram!
+ <p align="center">Download videos and photos from Youtube, Facebook and Instagram!</p>
 
 ## Install
 Regardless of whether you chose the version of the terminal or GUI, you need to install the requirements. You can install it like this:
