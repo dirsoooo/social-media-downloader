@@ -15,6 +15,9 @@ If you are on Linux:
 ```
 python3 main.py
 ```
-![GUI App](./app.png)
+<p align="center">
+  <img src="./app.png">
+</p>
+</br>
 
 ### Good studies!
